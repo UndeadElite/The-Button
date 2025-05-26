@@ -263,6 +263,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73e78efed41e5a479485879290d864a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intractable: 1
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  resetDelay: -1
+  animationSpeed: 1
+  animator: {fileID: 0}

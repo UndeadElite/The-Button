@@ -38,7 +38,7 @@ public class Interactor : MonoBehaviour
 
         if (Physics.Raycast(r2, out hitInfo2, InteractRange))
         {
-            Debug.Log($"[Looking] Raycast hit: {hitInfo2.collider.gameObject.name} at {hitInfo2.point}, distance: {hitInfo2.distance:F2}");
+            //Debug.Log($"[Looking] Raycast hit: {hitInfo2.collider.gameObject.name} at {hitInfo2.point}, distance: {hitInfo2.distance:F2}");
             if (hitInfo2.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
                 if (hitInfo2.collider.CompareTag("Key"))
