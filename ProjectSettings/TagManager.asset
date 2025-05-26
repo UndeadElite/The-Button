@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Key
+  - HammerModel
   layers:
   - Default
   - TransparentFX
