@@ -12,13 +12,24 @@ public class HammerEvent : MonoBehaviour
     private GameObject spawnedHammer;
     private bool hasExploded = false;
 
+    public void Start()
+    {
+        
+    }
     public void Interact()
     {
         if (hasExploded) return;
 
         spawnedHammer = Instantiate(hammerPrefab, spawnPoint.position, spawnPoint.rotation);
-        Rigidbody rb = spawnedHammer.GetComponent<Rigidbody>();
 
+        // Enable BoxCollider if it's disabled
+        BoxCollider box = spawnedHammer.GetComponent<BoxCollider>();
+        if (box != null)
+        {
+            box.enabled = true;
+        }
+
+        Rigidbody rb = spawnedHammer.GetComponent<Rigidbody>();
         if (rb != null)
         {
             float force = Random.Range(explosionMinForce, explosionMaxForce);
@@ -28,4 +39,6 @@ public class HammerEvent : MonoBehaviour
 
         hasExploded = true;
     }
+
+
 }
