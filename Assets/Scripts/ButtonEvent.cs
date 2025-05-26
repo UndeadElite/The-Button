@@ -21,7 +21,8 @@ public class ButtonEvent : MonoBehaviour, IInteractable
     {
         if (animator != null)
         {
-            animator.SetTrigger("ButtonPressed");
+            // Play the animation state directly
+            animator.SetBool("ButtomUp", false);
         }
 
         if (ButtomUp)
