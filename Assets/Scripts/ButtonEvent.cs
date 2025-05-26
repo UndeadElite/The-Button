@@ -8,6 +8,15 @@ public class ButtonEvent : MonoBehaviour, IInteractable
 
     bool ButtomUp = true;
 
+    void Awake()
+    {
+        // Get Animator from children if not assigned in Inspector
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+    }
+
     public void Interact()
     {
         if (animator != null)
