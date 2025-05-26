@@ -29,7 +29,7 @@ public class Interactor : MonoBehaviour
             }
             else
             {
-                Debug.Log("[E Pressed] Raycast did not hit anything.");
+                //Debug.Log("[E Pressed] Raycast did not hit anything.");
             }
         }
 
@@ -57,7 +57,7 @@ public class Interactor : MonoBehaviour
         }
         else
         {
-            Debug.Log("[Looking] Raycast did not hit anything.");
+            //Debug.Log("[Looking] Raycast did not hit anything.");
             PickUpText.SetActive(false);
         }
     }
