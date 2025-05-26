@@ -5,8 +5,14 @@ public class ButtonEvent : MonoBehaviour, IInteractable
 {
     [SerializeField] private UnityEvent onInteract;
 
+    bool ButtomUp = true;
+
     public void Interact()
     {
-        onInteract?.Invoke(); // Trigger event(s) assigned in inspector
+        if (ButtomUp)
+        {
+            ButtomUp = false;
+            onInteract?.Invoke(); // Trigger event(s) assigned in inspector
+        }
     }
 }
