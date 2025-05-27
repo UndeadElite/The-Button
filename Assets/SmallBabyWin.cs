@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SmallBabyWin : MonoBehaviour
 {
-    bool BabyKey = false;
+    [SerializeField] bool BabyKey = false;
 
     public void Interact()
     {
