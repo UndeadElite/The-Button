@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class ButtonEvent : MonoBehaviour, IInteractable
 {
@@ -11,6 +9,13 @@ public class ButtonEvent : MonoBehaviour, IInteractable
     [SerializeField] private float intractableAfterResetDelay = -1; // if < 0 dont reset
     [SerializeField] private float animationSpeed = 1;
     [SerializeField] Animator animator;
+
+    Vector3 originalScale;
+    Vector3 growScale;
+    Vector3 targetScale;
+    Vector3 currentVelocity = Vector3.zero;
+    float smoothTime = 0.1f;
+    bool isScaling = false;
 
     bool ButtomUp = true;
     private static readonly int UpAnimator = Animator.StringToHash("ButtomUp");
@@ -35,6 +40,26 @@ public class ButtonEvent : MonoBehaviour, IInteractable
     {
         animator.SetFloat(SpeedAnimator,animationSpeed);
         animator.SetBool(AutoResetAnimator,intractableAfterResetDelay >= 0);
+
+        originalScale = transform.localScale;
+        growScale = originalScale * 1.2f;
+        targetScale = originalScale;
+    }
+    
+    public void Update()
+    {
+        if (isScaling)
+        {
+            transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale, ref currentVelocity, smoothTime);
+
+            // Stop when we're close enough to the target scale
+            if (Vector3.Distance(transform.localScale, targetScale) < 0.01f)
+            {
+                transform.localScale = targetScale;
+                isScaling = false;
+                currentVelocity = Vector3.zero;
+            }
+        }
     }
 
     public void Interact()
@@ -57,6 +82,10 @@ public class ButtonEvent : MonoBehaviour, IInteractable
             if (intractableAfterResetDelay >= 0)
                 StartCoroutine(RestButtonCoroutine());
         }
+
+        targetScale = growScale;
+        isScaling = true;
+        Invoke(nameof(ResetScale), 0.2f); // delay before shrinking back
     }
 
     IEnumerator RestButtonCoroutine()
@@ -65,5 +94,11 @@ public class ButtonEvent : MonoBehaviour, IInteractable
         animator.SetBool(UpAnimator, true);
         yield return new WaitForSeconds(intractableAfterResetDelay);
         ButtomUp = true;
+    }
+
+    void ResetScale()
+    {
+        targetScale = originalScale;
+        isScaling = true;
     }
 }
