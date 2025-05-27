@@ -8,14 +8,17 @@ public class ButtonEvent : MonoBehaviour, IInteractable
     [SerializeField] private UnityEvent onInteract;
     [SerializeField] private float intractableAfterResetDelay = -1; // if < 0 dont reset
     [SerializeField] private float animationSpeed = 1;
+    [SerializeField] private AudioSource SoundEffect;
     [SerializeField] Animator animator;
-
+    private AudioSource audioSource;
     Vector3 originalScale;
     Vector3 growScale;
     Vector3 targetScale;
     Vector3 currentVelocity = Vector3.zero;
     float smoothTime = 0.1f;
     bool isScaling = false;
+
+   
 
     bool ButtomUp = true;
     private static readonly int UpAnimator = Animator.StringToHash("ButtomUp");
@@ -73,6 +76,11 @@ public class ButtonEvent : MonoBehaviour, IInteractable
         {
             // Play the animation state directly
             animator.SetBool(UpAnimator, false);
+        }
+
+        if (SoundEffect != null)
+        {
+            SoundEffect.Play();
         }
 
         if (ButtomUp)
