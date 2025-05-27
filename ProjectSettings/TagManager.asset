@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Key
+  - Rattle
+  - Hammer
   - HammerModel
+  - Buttom
   layers:
   - Default
   - TransparentFX

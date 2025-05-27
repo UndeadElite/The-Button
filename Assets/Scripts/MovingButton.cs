@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class MovingButton : MonoBehaviour
@@ -11,7 +13,10 @@ public class MovingButton : MonoBehaviour
     [field: SerializeField] public int index { get; private set; }
     private bool isMoving;
 
+    public UnityEvent onFinishedMoving;
     private ButtonEvent buttonEvent;
+
+    public bool isDisabled;
 
     private void Awake()
     {
@@ -29,33 +34,57 @@ public class MovingButton : MonoBehaviour
 
     public void MoveToNextPos()
     {
-        if (isMoving || movePositions.Length == 0)
+        if (isDisabled || isMoving || movePositions.Length == 0)
             return;
         
         index++;
         index %= movePositions.Length;
-        StartCoroutine(MoveTo(movePositions[index]));
+        StartCoroutine(MoveTo(movePositions[index].GetComponentsInChildren<Transform>()));
 
     }
 
-    public IEnumerator MoveTo(Transform nextTransform)
+    public IEnumerator MoveTo(Transform[] nextTransforms)
     {
         isMoving = true;
         buttonEvent.intractable = false;
-        float ogDistance = Vector3.Distance(transform.position, nextTransform.position);
-        float distance = ogDistance;
-        while (distance > 0.01f)
+        for (int i = nextTransforms.Length-1; i >= 0 ; i--)
         {
-            transform.position = Vector3.MoveTowards(transform.position, nextTransform.position, speed * Time.deltaTime);
-            distance = Vector3.Distance(transform.position, nextTransform.position);
-            transform.rotation = Quaternion.Lerp( nextTransform.rotation,transform.rotation, distance / ogDistance);
+            float ogDistance = Vector3.Distance(transform.position, nextTransforms[i].position);
+            float distance = ogDistance;
+            Quaternion ogRotation = transform.rotation;
+            while (distance > 0.01f)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, nextTransforms[i].position, speed * Time.deltaTime);
+                distance = Vector3.Distance(transform.position, nextTransforms[i].position);
+                transform.rotation = Quaternion.Lerp( nextTransforms[i].rotation,ogRotation, distance / ogDistance);
             
-            yield return null;
+                yield return null;
+            }
+            
+            transform.position = nextTransforms[i].position;
+            transform.rotation = nextTransforms[i].rotation;
         }
-
         buttonEvent.intractable = true;
         isMoving = false;
-        transform.position = nextTransform.position;
-        transform.rotation = nextTransform.rotation;
+        onFinishedMoving.Invoke();
     }
+
+    [Header("Editor")]
+    [SerializeField] private bool setButtonPosToIndex;
+
+    private void OnValidate()
+    {
+        if (setButtonPosToIndex)
+        {
+            setButtonPosToIndex = false;
+            index %= movePositions.Length;
+            transform.position = movePositions[index].position;
+            transform.rotation = movePositions[index].rotation;
+        }
+    }
+}
+
+public interface IScriptUpdate
+{
+    public void ScriptUpdated();
 }
