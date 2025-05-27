@@ -29,6 +29,8 @@ public class PickUp : MonoBehaviour, IInteractable
         }
     }
 
+ 
+
     private void PickUpItem()
     {
         playerIsHolding = true;
@@ -47,5 +49,14 @@ public class PickUp : MonoBehaviour, IInteractable
         Vector3 dropPosition = playerTransform.position + playerTransform.forward * 1.5f;
         gameObject.transform.position = dropPosition;
         gameObject.SetActive(true); // Show in world
+    }
+
+    public void GiveToSmallBaby()
+    {
+        playerIsHolding = false;
+        CurrentHeld = null;
+        ObjectOnPlayer.SetActive(false); // Hide in hand
+        gameObject.SetActive(false);     // Hide in world
+        Destroy(gameObject);
     }
 }

@@ -28,8 +28,10 @@ public class Interactor : MonoBehaviour
                 if (baby != null && PickUp.playerIsHolding && PickUp.CurrentHeld != null && PickUp.CurrentHeld.CompareTag("Rattle"))
                 {
                     baby.OnRattleGiven();
-                    PickUp.CurrentHeld.Drop();
+                    PickUp.CurrentHeld.GiveToSmallBaby();
+                    
                     return;
+                 
                 }
 
                 // Default interactable logic
@@ -97,6 +99,11 @@ public class Interactor : MonoBehaviour
             {
                 PickUp.CurrentHeld.Drop();
             }
+        }
+        if (PickUp.playerIsHolding && PickUp.CurrentHeld != null)
+        {
+            PickUpText.SetActive(true);
+            PickUpTextUI.text = "Press Q to drop!";
         }
     }
 }
