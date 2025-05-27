@@ -24,6 +24,7 @@ public class ButtonEvent : MonoBehaviour, IInteractable
     private static readonly int UpAnimator = Animator.StringToHash("ButtomUp");
     private static readonly int SpeedAnimator = Animator.StringToHash("Speed");
     private static readonly int AutoResetAnimator = Animator.StringToHash("IsAutoReset");
+    private static readonly int ButtonClickedAnimator = Animator.StringToHash("ButtonClicked");
 
     void Awake()
     {
@@ -75,7 +76,7 @@ public class ButtonEvent : MonoBehaviour, IInteractable
         if (animator != null)
         {
             // Play the animation state directly
-            animator.SetBool(UpAnimator, false);
+            animator.SetTrigger(ButtonClickedAnimator);
         }
 
         if (SoundEffect != null)
@@ -98,9 +99,9 @@ public class ButtonEvent : MonoBehaviour, IInteractable
 
     IEnumerator RestButtonCoroutine()
     {
-        yield return null;
-        animator.SetBool(UpAnimator, true);
+        intractable = false;
         yield return new WaitForSeconds(intractableAfterResetDelay);
+        intractable = true;
         ButtomUp = true;
     }
 

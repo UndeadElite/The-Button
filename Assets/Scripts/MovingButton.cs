@@ -61,7 +61,7 @@ public class MovingButton : MonoBehaviour
 
                 if (playSoundTime <= 0)
                 {
-                    AudioSource audio = SoundManager.instance.PlaySound(gameObject, SoundManager.SoundType.ButtonMove,
+                    AudioSource audio = SoundManager.instance.PlaySound(gameObject, SoundManager.SoundType.MelodicPercussion,
                         SoundManager.MixerType.Environment);
                     playSoundTime = audio.clip.length;
                 }

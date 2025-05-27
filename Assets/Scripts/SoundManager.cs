@@ -72,6 +72,9 @@ public class SoundManager : MonoBehaviour
     {
         Win,
         ButtonMove,
+        Swoop,
+        MelodicAmbient,
+        MelodicPercussion,
     }
     public enum MixerType
     {
