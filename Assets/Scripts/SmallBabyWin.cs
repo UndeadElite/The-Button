@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class SmallBabyWin : MonoBehaviour
 {
-    [SerializeField] bool BabyKey = false;
+    public bool BabyKey = false;
+
+    Animator PlankCollider;
+
+    private void Start()
+    {
+        PlankCollider = GetComponent<Animator>();
+    }
+
 
     public void Interact()
     {
