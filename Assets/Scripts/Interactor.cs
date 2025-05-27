@@ -30,6 +30,7 @@ public class Interactor : MonoBehaviour
                     baby.OnRattleGiven();
                     PickUp.CurrentHeld.Drop();
                     return;
+                 
                 }
 
                 // Default interactable logic
