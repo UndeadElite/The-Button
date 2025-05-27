@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TMPro;
 interface IInteractable
 {
     public void Interact();
@@ -9,11 +9,12 @@ public class Interactor : MonoBehaviour
     public Transform InteractorSource;
     public float InteractRange;
     public GameObject PickUpText;
+    public TMPro.TextMeshProUGUI PickUpTextUI;
     PickUp pickUpObject;
 
     void Update()
     {
-        // Draw the ray in the Scene view for debugging
+    
         Debug.DrawRay(InteractorSource.position, InteractorSource.forward * InteractRange, Color.green);
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -36,14 +37,27 @@ public class Interactor : MonoBehaviour
         Ray r2 = new Ray(InteractorSource.position, InteractorSource.forward);
         RaycastHit hitInfo2;
 
+        // ... (rest of your code)
+
         if (Physics.Raycast(r2, out hitInfo2, InteractRange))
         {
-            //Debug.Log($"[Looking] Raycast hit: {hitInfo2.collider.gameObject.name} at {hitInfo2.point}, distance: {hitInfo2.distance:F2}");
             if (hitInfo2.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
+                // Check for multiple tags
                 if (hitInfo2.collider.CompareTag("Key"))
                 {
                     PickUpText.SetActive(true);
+                    PickUpTextUI.text = "Press E to pick up the key!";
+                }
+                else if (hitInfo2.collider.CompareTag("Rattle"))
+                {
+                    PickUpText.SetActive(true);
+                    PickUpTextUI.text = "Press E to pick up the rattle!";
+                }
+                else if (hitInfo2.collider.CompareTag("Hammer"))
+                {
+                    PickUpText.SetActive(true);
+                    PickUpTextUI.text = "Press E to pick up the hammer!";
                 }
                 else
                 {
@@ -57,7 +71,6 @@ public class Interactor : MonoBehaviour
         }
         else
         {
-            //Debug.Log("[Looking] Raycast did not hit anything.");
             PickUpText.SetActive(false);
         }
 
