@@ -50,4 +50,13 @@ public class PickUp : MonoBehaviour, IInteractable
         gameObject.transform.position = dropPosition;
         gameObject.SetActive(true); // Show in world
     }
+
+    public void GiveToSmallBaby()
+    {
+        playerIsHolding = false;
+        CurrentHeld = null;
+        ObjectOnPlayer.SetActive(false); // Hide in hand
+        gameObject.SetActive(false);     // Hide in world
+        Destroy(gameObject);
+    }
 }
