@@ -2,21 +2,19 @@ using UnityEngine;
 
 public class SmallBabyWin : MonoBehaviour
 {
-    public bool BabyKey = false;
-
-    Animator PlankCollider;
-
-    private void Start()
-    {
-        PlankCollider = GetComponent<Animator>();
-    }
-
-
+    public Animator otherObjectAnimator;
+    public MainDoor mainDoor;
     public void Interact()
     {
         Debug.Log("You done baby section!");
-        BabyKey = true;
         
-        // You can add more logic here as needed
+        if (mainDoor != null)
+        {
+            mainDoor.babykey = true; 
+        }
     }
+
+    //gör samma med den andra lösnignen
+    // om vi inte hinner med en till lösningewn så har vi bara två
+
 }
