@@ -12,5 +12,6 @@ public class ExplosionButton : MonoBehaviour
     public void interact()
     {
         Explosion.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
