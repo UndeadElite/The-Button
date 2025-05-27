@@ -29,6 +29,8 @@ public class PickUp : MonoBehaviour, IInteractable
         }
     }
 
+ 
+
     private void PickUpItem()
     {
         playerIsHolding = true;
