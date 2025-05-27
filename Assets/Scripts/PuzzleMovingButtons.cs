@@ -53,4 +53,9 @@ public class PuzzleMovingButtons : MonoBehaviour
             buttonSolution.button.isDisabled = true;
         }
     }
+
+    public void PlayCompleteSound()
+    {
+        SoundManager.instance.PlayWinSound(gameObject);
+    }
 }

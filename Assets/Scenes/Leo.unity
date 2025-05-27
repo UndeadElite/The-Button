@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorClose/Open
       objectReference: {fileID: 0}
+    - target: {fileID: 8280706907269154723, guid: 54551a31704f21c4cb430315b9abb820, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 532222fdd937e0b4bb7d7c9e50db2ebc, type: 2}
     - target: {fileID: 8543336896891488371, guid: 54551a31704f21c4cb430315b9abb820, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.39
@@ -554,7 +558,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2768671354046543081, guid: 54551a31704f21c4cb430315b9abb820, type: 3}
+    - {fileID: 6650845417953842727, guid: 54551a31704f21c4cb430315b9abb820, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
