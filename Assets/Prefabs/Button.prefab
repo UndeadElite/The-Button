@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 4cf5793fa33d7a9458f33e1c153452fb, type: 3}
+  - {fileID: 2100000, guid: ae0763661707db84390f0f076a656f8d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -173,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 4cf5793fa33d7a9458f33e1c153452fb, type: 3}
+  - {fileID: 2100000, guid: c154dac17eef33845b620abd70336375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -267,6 +267,6 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  resetDelay: -1
+  intractableAfterResetDelay: -1
   animationSpeed: 1
   animator: {fileID: 0}

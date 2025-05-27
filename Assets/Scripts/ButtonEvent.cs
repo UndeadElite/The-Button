@@ -24,6 +24,11 @@ public class ButtonEvent : MonoBehaviour, IInteractable
         {
             animator = GetComponentInChildren<Animator>();
         }
+        
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
     }
 
     private void Start()
@@ -36,7 +41,9 @@ public class ButtonEvent : MonoBehaviour, IInteractable
     {
         if (intractable == false)
             return;
-        
+
+        animator.enabled = true;
+
         if (animator != null)
         {
             // Play the animation state directly
