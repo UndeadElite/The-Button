@@ -3,8 +3,10 @@ using UnityEngine;
 public class BrokenButton : MonoBehaviour
 {
     [SerializeField] Rigidbody childRb;
+    public GameObject Smoke;
     public void Start()
     {
+        Smoke.SetActive(false);
 
         if (childRb != null)
         {
@@ -17,7 +19,9 @@ public class BrokenButton : MonoBehaviour
         {
             childRb.isKinematic = false;
 
-            childRb.AddForce(Vector3.forward * 5f, ForceMode.Impulse);
+            childRb.AddForce(Vector3.right * 5f, ForceMode.Impulse);
         }
+
+        Smoke.SetActive(true);
     }
 }
