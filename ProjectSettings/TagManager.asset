@@ -8,6 +8,7 @@ TagManager:
   - Rattle
   - Hammer
   - HammerModel
+  - Buttom
   layers:
   - Default
   - TransparentFX
