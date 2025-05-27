@@ -71,6 +71,7 @@ public class SoundManager : MonoBehaviour
     public enum SoundType
     {
         Win,
+        ButtonMove,
     }
     public enum MixerType
     {

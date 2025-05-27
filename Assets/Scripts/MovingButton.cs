@@ -49,6 +49,7 @@ public class MovingButton : MonoBehaviour
         buttonEvent.intractable = false;
         for (int i = nextTransforms.Length-1; i >= 0 ; i--)
         {
+            float playSoundTime = 0;
             float ogDistance = Vector3.Distance(transform.position, nextTransforms[i].position);
             float distance = ogDistance;
             Quaternion ogRotation = transform.rotation;
@@ -57,7 +58,16 @@ public class MovingButton : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, nextTransforms[i].position, speed * Time.deltaTime);
                 distance = Vector3.Distance(transform.position, nextTransforms[i].position);
                 transform.rotation = Quaternion.Lerp( nextTransforms[i].rotation,ogRotation, distance / ogDistance);
-            
+
+                if (playSoundTime <= 0)
+                {
+                    AudioSource audio = SoundManager.instance.PlaySound(gameObject, SoundManager.SoundType.ButtonMove,
+                        SoundManager.MixerType.Environment);
+                    playSoundTime = audio.clip.length;
+                }
+                else
+                    playSoundTime -= Time.deltaTime;
+                
                 yield return null;
             }
             
