@@ -60,6 +60,14 @@ public class Interactor : MonoBehaviour
             //Debug.Log("[Looking] Raycast did not hit anything.");
             PickUpText.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (PickUp.playerIsHolding && PickUp.CurrentHeld != null)
+            {
+                PickUp.CurrentHeld.Drop();
+            }
+        }
     }
 
 
