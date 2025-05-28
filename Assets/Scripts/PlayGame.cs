@@ -46,7 +46,7 @@ public class PlayGame : MonoBehaviour
     void SceneChange()
     {
         Debug.Log("Scene Change");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1);
     }
 
     void explode()

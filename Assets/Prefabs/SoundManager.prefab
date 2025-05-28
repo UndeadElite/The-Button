@@ -252,3 +252,21 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f11aec73371e7404d88a59b468916456, type: 3}
     - {fileID: 8300000, guid: f8b4d35cbc59faf4bbef648004df1462, type: 3}
     - {fileID: 8300000, guid: ce8be6b5497e1a84d83b7e4a02e06188, type: 3}
+  - name: Click
+    soundType: 5
+    audioResource:
+    - {fileID: 8300000, guid: a16265143ba9faf48a6f9d8d803f3e1c, type: 3}
+    - {fileID: 8300000, guid: ee07dd2937e6452439b72791dbbca7ee, type: 3}
+    - {fileID: 8300000, guid: 93cd20802fb060544b22c6781df11c24, type: 3}
+    - {fileID: 8300000, guid: 7d43a398cee9ee64185fe25ac9aacca0, type: 3}
+    - {fileID: 8300000, guid: d84f351e11b5e0e418da6d2c0f5899d6, type: 3}
+    - {fileID: 8300000, guid: 6f87f09b880817e44bd05cc0588db33a, type: 3}
+    - {fileID: 8300000, guid: 82f4f6ec32531784a9f153a44498dc05, type: 3}
+    - {fileID: 8300000, guid: 1d9aaea6b4023e94f8e4485f933bc762, type: 3}
+    - {fileID: 8300000, guid: 37c999f0e42671947a260abaa2d15d13, type: 3}
+    - {fileID: 8300000, guid: 41b40abc19f91f44d963e050d68f6d60, type: 3}
+    - {fileID: 8300000, guid: a794ab91c226adf40bc080d2103c0648, type: 3}
+    - {fileID: 8300000, guid: b4aa0597e4ed65a43a405e2ea18c4ca3, type: 3}
+    - {fileID: 8300000, guid: 7551d3c5eeeb105469c80341b4b1ddb8, type: 3}
+    - {fileID: 8300000, guid: 6fa7acdba03847241b4c0429265f7762, type: 3}
+    - {fileID: 8300000, guid: 6d4e095fc92ba7045bb9b34355afec3f, type: 3}

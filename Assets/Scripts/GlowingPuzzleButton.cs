@@ -44,6 +44,7 @@ public class GlowingPuzzleButton : MonoBehaviour
 
     public void ButtonPress()
     {
+        SoundManager.instance.PlaySound(SoundManager.SoundType.Click, SoundManager.MixerType.SoundEffects);
         puzzleGlowingButtons.ButtonPressed(indexInPuzzle);
     }
 
