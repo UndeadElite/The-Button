@@ -8,8 +8,11 @@ public class SmallBaby : MonoBehaviour
     public GameObject raffleInHand; // Assign the raffle GameObject in the Inspector
     public AudioSource babycryAudioSource; // Assign in Inspector or get in Awake
     public AudioSource babyhappyAudioSource;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private GameObject completeButton;
+    private static readonly int BabyHappy = Animator.StringToHash("BabyHappy");
+
     void Start()
     {
      
@@ -23,6 +26,7 @@ public class SmallBaby : MonoBehaviour
 
     public void OnRattleGiven()
     {
+        animator.SetTrigger(BabyHappy);
         if (buttonPrefab != null)
         {
             completeButton.SetActive(true);
