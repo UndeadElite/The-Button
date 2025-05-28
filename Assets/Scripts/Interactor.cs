@@ -83,10 +83,10 @@ public class Interactor : MonoBehaviour
                     switch (mainDoor.PlanksRemoved)
                     {
                         case 0:
-                            PickUpTextUI.text = "No No, To much to handle maybe later.";
+                            PickUpTextUI.text = "Make the crying stop!";
                             break;
                         case 1:
-                            PickUpTextUI.text = "One plank left! Still To much!";
+                            PickUpTextUI.text = "One plank left! Still too much!";
                             break;
                         case 2:
                             PickUpTextUI.text = "Wow Press E to Open";

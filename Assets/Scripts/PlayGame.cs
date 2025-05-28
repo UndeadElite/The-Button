@@ -17,22 +17,12 @@ public class PlayGame : MonoBehaviour
     }
     public void PlayAnimation()
     {
-        Debug.Log("playing animation???");
         if(Button != null)
         {
             if(animator != null )
             {
-                Debug.Log("Playing Animaiton");
                 animator.Play("ButtomDownNew",0);
             }
-            else
-            {
-                Debug.Log("animator null");
-            }
-        }
-        else
-        {
-            Debug.Log("button null");
         }
     }
 
@@ -45,7 +35,6 @@ public class PlayGame : MonoBehaviour
     }
     void SceneChange()
     {
-        Debug.Log("Scene Change");
         SceneManager.LoadSceneAsync(1);
     }
 
