@@ -702,6 +702,8 @@ MonoBehaviour:
   raffleInHand: {fileID: 6141658932186019657}
   babycryAudioSource: {fileID: 3934358598897910800}
   babyhappyAudioSource: {fileID: 561019535746421402}
+  animator: {fileID: 7451254610928899246}
+  completeButton: {fileID: 0}
 --- !u!65 &3582765800539270308
 BoxCollider:
   m_ObjectHideFlags: 0

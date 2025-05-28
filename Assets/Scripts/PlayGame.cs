@@ -5,8 +5,10 @@ public class PlayGame : MonoBehaviour
 {
     public GameObject Button;
     [SerializeField] Animator animator;
+    [SerializeField] Animator clickAnimator;
     public GameObject Explosion;
     [SerializeField] AudioSource audioSource;
+
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class PlayGame : MonoBehaviour
 
     public void WaitBeforeChanging()
     {
+        clickAnimator.SetTrigger("Click");
         PlayAnimation();
         Invoke("SceneChange", 2);
         Invoke("explode", 1.8f);
