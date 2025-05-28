@@ -2118,7 +2118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonMesh: {fileID: 691657025}
-  glowMaterial: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  glowMaterial: {fileID: 2100000, guid: fee30a9f7be0ef7449ba7ba74696454e, type: 2}
 --- !u!82 &706229491 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3705313179763773996, guid: e6a6f0ffa5b725a4ebbdec9d69190790, type: 3}
@@ -2591,7 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonMesh: {fileID: 969294281}
-  glowMaterial: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  glowMaterial: {fileID: 2100000, guid: fee30a9f7be0ef7449ba7ba74696454e, type: 2}
 --- !u!1001 &979726908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonMesh: {fileID: 1496429864}
-  glowMaterial: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  glowMaterial: {fileID: 2100000, guid: fee30a9f7be0ef7449ba7ba74696454e, type: 2}
 --- !u!1001 &1506612991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4145,7 +4145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonMesh: {fileID: 1506612992}
-  glowMaterial: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  glowMaterial: {fileID: 2100000, guid: fee30a9f7be0ef7449ba7ba74696454e, type: 2}
 --- !u!4 &1507364777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1309548909694329802, guid: fc9049d7bd4984a42a84d2bf209a4a7a, type: 3}
@@ -5838,7 +5838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonMesh: {fileID: 1993548436}
-  glowMaterial: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  glowMaterial: {fileID: 2100000, guid: fee30a9f7be0ef7449ba7ba74696454e, type: 2}
 --- !u!1 &2005965117
 GameObject:
   m_ObjectHideFlags: 0
@@ -6248,7 +6248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonMesh: {fileID: 2098263289}
-  glowMaterial: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  glowMaterial: {fileID: 2100000, guid: fee30a9f7be0ef7449ba7ba74696454e, type: 2}
 --- !u!1 &2101175783
 GameObject:
   m_ObjectHideFlags: 0
