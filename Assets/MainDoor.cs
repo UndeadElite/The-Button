@@ -37,7 +37,14 @@ public class MainDoor : MonoBehaviour
     }
 
 
-
+    public void RemovePlank1()
+    {
+        babykey = true;
+    }
+    public void RemovePlank2()
+    {
+        doneKey = true;
+    }
 
     void Update()
     {

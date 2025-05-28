@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SmallBaby : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class SmallBaby : MonoBehaviour
     public GameObject raffleInHand; // Assign the raffle GameObject in the Inspector
     public AudioSource babycryAudioSource; // Assign in Inspector or get in Awake
     public AudioSource babyhappyAudioSource;
+
+    [SerializeField] private GameObject completeButton;
     void Start()
     {
      
@@ -22,9 +25,10 @@ public class SmallBaby : MonoBehaviour
     {
         if (buttonPrefab != null)
         {
-            Vector3 position = spawnPoint != null ? spawnPoint.position : transform.position + Vector3.up;
-            Quaternion rotation = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
-            Instantiate(buttonPrefab, position, rotation);
+            completeButton.SetActive(true);
+            //Vector3 position = spawnPoint != null ? spawnPoint.position : transform.position + Vector3.up;
+            //Quaternion rotation = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
+            //Instantiate(buttonPrefab, position, rotation);
         }
 
         if (raffleInHand != null)
