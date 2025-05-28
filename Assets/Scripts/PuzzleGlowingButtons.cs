@@ -36,6 +36,7 @@ public class PuzzleGlowingButtons : MonoBehaviour
         {
             interactor.InteractRange = ogInteractorRange;
             onSolved.Invoke();
+            SoundManager.instance.PlayWinSound();
             return;
         }
 
